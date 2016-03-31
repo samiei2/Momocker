@@ -1,1 +1,5 @@
-D:\Devs\MoMoker\MoMoker\bin\Debug\MoMoker.exe.config
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.exe.config
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.exe
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\obj\Debug\MoMoker.exe
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\obj\Debug\MoMoker.pdb

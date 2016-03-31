@@ -41,11 +41,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="src\2dCoordinate.cs" />
+    <Compile Include="src\3dCoordinate.cs" />
+    <Compile Include="src\Coordinate.cs" />
+    <Compile Include="src\InputInterface.cs" />
+    <Compile Include="src\KeyboardInput.cs" />
+    <Compile Include="src\MouseController.cs" />
+    <Compile Include="src\PointerMocker.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\WindowsInput\IInputDeviceStateAdaptor.cs" />
+    <Compile Include="src\WindowsInput\IInputMessageDispatcher.cs" />
+    <Compile Include="src\WindowsInput\IInputSimulator.cs" />
+    <Compile Include="src\WindowsInput\IKeyboardSimulator.cs" />
+    <Compile Include="src\WindowsInput\IMouseSimulator.cs" />
+    <Compile Include="src\WindowsInput\InputBuilder.cs" />
+    <Compile Include="src\WindowsInput\InputSimulator.cs" />
+    <Compile Include="src\WindowsInput\KeyboardSimulator.cs" />
+    <Compile Include="src\WindowsInput\MouseButton.cs" />
+    <Compile Include="src\WindowsInput\MouseSimulator.cs" />
+    <Compile Include="src\WindowsInput\Native\HARDWAREINPUT.cs" />
+    <Compile Include="src\WindowsInput\Native\INPUT.cs" />
+    <Compile Include="src\WindowsInput\Native\InputType.cs" />
+    <Compile Include="src\WindowsInput\Native\KEYBDINPUT.cs" />
+    <Compile Include="src\WindowsInput\Native\KeyboardFlag.cs" />
+    <Compile Include="src\WindowsInput\Native\MouseFlag.cs" />
+    <Compile Include="src\WindowsInput\Native\MOUSEINPUT.cs" />
+    <Compile Include="src\WindowsInput\Native\MOUSEKEYBDHARDWAREINPUT.cs" />
+    <Compile Include="src\WindowsInput\Native\NativeMethods.cs" />
+    <Compile Include="src\WindowsInput\Native\VirtualKeyCode.cs" />
+    <Compile Include="src\WindowsInput\Native\XButton.cs" />
+    <Compile Include="src\WindowsInput\WindowsInputDeviceStateAdaptor.cs" />
+    <Compile Include="src\WindowsInput\WindowsInputMessageDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="src\WindowsInput\WindowsInput.nuspec" />
+    <None Include="src\WindowsInput\WindowsInput.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\WindowsInput\WindowsInput.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
