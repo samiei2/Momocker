@@ -12,3 +12,8 @@ D:\Armin\momocker\MoMoker\bin\Debug\Microsoft.Kinect.xml
 D:\Armin\momocker\MoMoker\bin\Debug\Newtonsoft.Json.xml
 D:\Armin\momocker\MoMoker\obj\Debug\MoMoker.exe
 D:\Armin\momocker\MoMoker\obj\Debug\MoMoker.pdb
+D:\Armin\momocker\MoMoker\bin\Debug\SharpDX.dll
+D:\Armin\momocker\MoMoker\bin\Debug\SharpDX.xml
+D:\Armin\momocker\MoMoker\obj\Debug\MoMoker.csprojResolveAssemblyReference.cache
+D:\Armin\momocker\MoMoker\bin\Debug\KinectEx.dll
+D:\Armin\momocker\MoMoker\bin\Debug\KinectEx.pdb
