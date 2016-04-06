@@ -9,10 +9,10 @@ namespace MoMoker.src
     class GestureState
     {
         long timeStamp = 0;
-    }
 
-    class RotateState : GestureState
-    {
-
+        public GestureState(long v)
+        {
+            this.timeStamp = v;
+        }
     }
 }

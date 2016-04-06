@@ -1,4 +1,5 @@
-﻿using MoMoker.src;
+﻿using KinectV2MouseControl;
+using MoMoker.src;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,7 @@ namespace MoMoker
     {
         static void Main(string[] args)
         {
-            new KinectGestures();
-            Console.ReadKey();
+            KinectControl kController = new KinectControl();
         }
     }
 }

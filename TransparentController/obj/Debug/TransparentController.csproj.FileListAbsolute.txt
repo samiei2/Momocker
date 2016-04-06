@@ -1,0 +1,16 @@
+D:\Armin\momocker\TransparentController\bin\Debug\TransparentController.exe.config
+D:\Armin\momocker\TransparentController\bin\Debug\TransparentController.exe
+D:\Armin\momocker\TransparentController\bin\Debug\TransparentController.pdb
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.csprojResolveAssemblyReference.cache
+D:\Armin\momocker\TransparentController\obj\Debug\MainWindow.g.cs
+D:\Armin\momocker\TransparentController\obj\Debug\App.g.cs
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController_MarkupCompile.cache
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController_MarkupCompile.lref
+D:\Armin\momocker\TransparentController\obj\Debug\MainWindow.baml
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.g.resources
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.Properties.Resources.resources
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.csproj.GenerateResource.Cache
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.exe
+D:\Armin\momocker\TransparentController\obj\Debug\TransparentController.pdb
+D:\Armin\momocker\TransparentController\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Armin\momocker\TransparentController\bin\Debug\Gma.System.MouseKeyHook.pdb

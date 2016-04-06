@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using KinectEx;
 using KinectEx.Smoothing;
 using Microsoft.Kinect;
-using bbv.Common.StateMachine;
 
 namespace MoMoker.src
 {
@@ -18,14 +17,18 @@ namespace MoMoker.src
         List<CustomBody> _bodies = null;
         SmoothedBodyList<KalmanSmoother> _kalmanBodies = null;
         SmoothedBodyList<ExponentialSmoother> _exponentialBodies = new SmoothedBodyList<ExponentialSmoother>();
+        private GestureState rotateInitState;
+        private readonly float zRotateDelta;
+        private readonly float yRotateDelta;
+        private readonly float xRotateDelta;
 
         public delegate void ChangedEventHandler(object sender, EventArgs e);
-        public event ChangedEventHandler leftHandRotatedRightWays;
+        public event ChangedEventHandler rightHandRotatedRightWays;
         
 
         public KinectGestures()
         {
-            leftHandRotatedRightWays += new ChangedEventHandler(LeftHandRotateHandler);
+            rightHandRotatedRightWays += new ChangedEventHandler(LeftHandRotateHandler);
 
             _sensor = KinectSensor.GetDefault();
 
@@ -63,10 +66,21 @@ namespace MoMoker.src
             IJoint rightWrist = getJoint(body,JointType.WristRight);
             IJoint leftWrist = getJoint(body, JointType.WristLeft);
             IJoint spineMid = getJoint(body, JointType.SpineMid);
-            
-            if (leftHandRotatedRightWays != null)
-                leftHandRotatedRightWays(body.Joints.Select(joint => joint.Key == JointType.WristRight),EventArgs.Empty);
+
+            var xDiffRightLeftWrist = rightWrist.Position.X - leftWrist.Position.X;
+            var yDiffRightLeftWrist = rightWrist.Position.Y - leftWrist.Position.Y;
+            var zDiffRightLeftWrist = rightWrist.Position.Z - leftWrist.Position.Z;
+
+            if (zDiffRightLeftWrist < zRotateDelta && yDiffRightLeftWrist < yRotateDelta && xDiffRightLeftWrist < xRotateDelta)
+                rotateInitState = new GestureState(PHelper.CurrentTimeMillis());
+
+            if(rotateInitState != null)
+            {
+
+            }
         }
+
+
 
         IJoint getJoint(IBody body,JointType jointName)
         {

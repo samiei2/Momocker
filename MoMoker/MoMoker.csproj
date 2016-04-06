@@ -54,11 +54,13 @@
     <Compile Include="src\2dCoordinate.cs" />
     <Compile Include="src\3dCoordinate.cs" />
     <Compile Include="src\Coordinate.cs" />
+    <Compile Include="src\GestureState.cs" />
     <Compile Include="src\InputInterface.cs" />
     <Compile Include="src\KeyboardInput.cs" />
     <Compile Include="src\KinectControl.cs" />
     <Compile Include="src\KinectGestures.cs" />
     <Compile Include="src\MouseControl.cs" />
+    <Compile Include="src\PHelper.cs" />
     <Compile Include="src\PointerMocker.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
