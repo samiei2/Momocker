@@ -57,7 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CaptureScreen.cs" />
+    <Compile Include="Captureing\CaptureScreen.cs" />
+    <Compile Include="Captureing\WindowSnap.cs" />
+    <Compile Include="Captureing\WindowSnapCollection.cs" />
+    <Compile Include="Captureing\XPAppearance.cs" />
+    <Compile Include="Captureing\XPAppearance.SPI.cs" />
     <Compile Include="WindowsServices.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -28,7 +28,7 @@ namespace TransparentController
         [DllImport("user32.dll")]
         private static extern IntPtr GetWindowRect(IntPtr hWnd, ref Rect rect);
 
-        public static Image CaptureDesktop()
+        public static Bitmap CaptureDesktop()
         {
             return CaptureWindow(GetDesktopWindow());
         }
@@ -51,6 +51,12 @@ namespace TransparentController
             }
 
             return result;
+        }
+
+        internal static object GetWindowRect(IntPtr window)
+        {
+            var rect = new Rect();
+            GetWindowRect(window,ref rect);
         }
     }
 }

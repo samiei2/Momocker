@@ -8,11 +8,11 @@
         Title="MainWindow" Height="350" Width="525" Topmost="True" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize"  
         WindowStartupLocation="CenterScreen" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
     <Window.Background>
-        <SolidColorBrush Opacity="0.1" Color="White"/>
+        <SolidColorBrush Opacity="0.01" Color="White"/>
     </Window.Background>
     <Grid x:Name="click">
         <Grid>
-            <Image x:Name="image"/>
+            <Image x:Name="image" OpacityMask="Black"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
         </Grid>
 
