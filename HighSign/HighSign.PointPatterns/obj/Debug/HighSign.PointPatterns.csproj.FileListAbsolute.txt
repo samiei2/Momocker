@@ -1,0 +1,5 @@
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\HighSign.PointPatterns\bin\Debug\HighSign.PointPatterns.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\HighSign.PointPatterns\bin\Debug\HighSign.PointPatterns.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\HighSign.PointPatterns\obj\Debug\HighSign.PointPatterns.csprojResolveAssemblyReference.cache
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\HighSign.PointPatterns\obj\Debug\HighSign.PointPatterns.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\HighSign.PointPatterns\obj\Debug\HighSign.PointPatterns.pdb

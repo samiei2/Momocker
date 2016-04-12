@@ -1,0 +1,10 @@
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\bin\Debug\ManagedWinapiNativeHelper.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\bin\Debug\ManagedWinapi.XML
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\bin\Debug\ManagedWinapi.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\bin\Debug\ManagedWinapi.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.csprojResolveAssemblyReference.cache
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.Crosshair.resources
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.ShortcutBox.resources
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.csproj.GenerateResource.Cache
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\HighSign\ManagedWinapi\obj\Debug\ManagedWinapi.pdb
