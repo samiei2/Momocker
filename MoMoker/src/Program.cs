@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KinectV2MouseControl;
+using MoMoker.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,15 +11,9 @@ namespace MoMoker
 {
     class Program
     {
-        [DllImport("user32")]
-        public static extern int SetCursorPos(int x, int y);
         static void Main(string[] args)
         {
-            SetCursorPos(199, 199);
-            for (int i = 0; i < 500; i++)
-            {
-                SetCursorPos(i, i);
-            }
+            KinectControl kController = new KinectControl();
         }
     }
 }

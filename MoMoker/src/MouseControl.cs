@@ -73,4 +73,8 @@ namespace KinectV2MouseControl
         }
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
