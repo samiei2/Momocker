@@ -8,3 +8,10 @@ D:\Armin\momocker\KinectEx\bin\Debug\Newtonsoft.Json.xml
 D:\Armin\momocker\KinectEx\bin\Debug\SharpDX.xml
 D:\Armin\momocker\KinectEx\obj\Debug\KinectEx.dll
 D:\Armin\momocker\KinectEx\obj\Debug\KinectEx.pdb
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\KinectEx.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\KinectEx.pdb
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\Microsoft.Kinect.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\Newtonsoft.Json.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\SharpDX.dll
+D:\Armin\momocker\momocker\KinectEx\obj\Debug\KinectEx.dll
+D:\Armin\momocker\momocker\KinectEx\obj\Debug\KinectEx.pdb

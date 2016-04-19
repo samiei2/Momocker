@@ -7,6 +7,7 @@ namespace KinectV2MouseControl
 {
     class MouseControl
     {
+        public static readonly int WHEEL_DELTA = 120;
         public static void MouseLeftDown()
         {
             mouse_event(MouseEventFlag.LeftDown, 0, 0, 0, UIntPtr.Zero);
@@ -19,6 +20,16 @@ namespace KinectV2MouseControl
         public static void DoMouseClick()
         {
             mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
+        }
+
+        public static void Scroll(int times)
+        {
+            mouse_event(MouseEventFlag.Wheel, 0, 0, (uint)(times * WHEEL_DELTA), UIntPtr.Zero);
+        }
+
+        public static void ScrollClick()
+        {
+            mouse_event(MouseEventFlag.MiddleDown | MouseEventFlag.MiddleUp, 0, 0, 0, UIntPtr.Zero);
         }
 
         [DllImport("user32.dll")]
@@ -71,10 +82,5 @@ namespace KinectV2MouseControl
 
             return lpPoint;
         }
-
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using KinectEx;
 using KinectEx.Smoothing;
 using Microsoft.Kinect;
+using System.Windows.Forms;
+using KinectV2MouseControl;
 
 namespace MoMoker.src
 {
@@ -21,6 +23,8 @@ namespace MoMoker.src
         private readonly float zRotateDelta;
         private readonly float yRotateDelta;
         private readonly float xRotateDelta;
+        private GestureState startScrollGesture;
+        private GestureState startScrollClickGesture;
 
         public delegate void ChangedEventHandler(object sender, EventArgs e);
         public event ChangedEventHandler rightHandRotatedRightWays;
@@ -63,24 +67,64 @@ namespace MoMoker.src
 
         private void detectGestures(IBody body)
         {
-            IJoint rightWrist = getJoint(body,JointType.WristRight);
-            IJoint leftWrist = getJoint(body, JointType.WristLeft);
+            IJoint rightHand = getJoint(body, JointType.HandRight);
+            IJoint leftHand = getJoint(body, JointType.HandLeft);
             IJoint spineMid = getJoint(body, JointType.SpineMid);
 
-            var xDiffRightLeftWrist = rightWrist.Position.X - leftWrist.Position.X;
-            var yDiffRightLeftWrist = rightWrist.Position.Y - leftWrist.Position.Y;
-            var zDiffRightLeftWrist = rightWrist.Position.Z - leftWrist.Position.Z;
-
-            if (zDiffRightLeftWrist < zRotateDelta && yDiffRightLeftWrist < yRotateDelta && xDiffRightLeftWrist < xRotateDelta)
-                rotateInitState = new GestureState(PHelper.CurrentTimeMillis());
-
-            if(rotateInitState != null)
-            {
-
-            }
+            DetectScrollGestures(body, rightHand, spineMid);
         }
 
+        private void DetectScrollGestures(IBody body, IJoint rightHand, IJoint spineMid)
+        {
+            var zRightHandBodyDistance = rightHand.Position.Z - spineMid.Position.Z;
+            if (zRightHandBodyDistance > 0.2f)
+            {
+                if (body.HandRightState == HandState.Closed)
+                {
+                    Console.WriteLine(body.HandRightConfidence);
+                    if (startScrollGesture == null)
+                    {
+                        startScrollGesture = new ScrollGestureState(PHelper.CurrentTimeMillis());
+                        startScrollGesture.oldCursorPosition = Cursor.Position;
+                    }
 
+                    if (startScrollClickGesture == null)
+                    {
+                        startScrollClickGesture = new ScrollGestureState(PHelper.CurrentTimeMillis());
+                        startScrollClickGesture.oldCursorPosition = Cursor.Position;
+                    }
+                    else
+                    {
+                        var currentTime = PHelper.CurrentTimeMillis();
+                        var timeDiff = currentTime - startScrollClickGesture.TimeStamp;
+                        if(timeDiff > 1000)
+                        {
+                            MouseControl.ScrollClick();
+                            startScrollGesture = null;
+                            startScrollClickGesture = null;
+                        }
+                    }
+                }
+                else if (body.HandRightState == HandState.Open)
+                {
+                    if (startScrollGesture != null)
+                    {
+                        var currentPosition = Cursor.Position;
+                        var yMovement = -1 * (currentPosition.Y - startScrollGesture.oldCursorPosition.Y);
+                        if (yMovement > 0.1)
+                        {
+                            var times = 10;
+                            MouseControl.Scroll(times);
+                            startScrollGesture = null;
+                        }
+                    }
+                }
+                else
+                {
+                    //ignore
+                }
+            }
+        }
 
         IJoint getJoint(IBody body,JointType jointName)
         {
@@ -88,13 +132,6 @@ namespace MoMoker.src
                         where joint.Key == jointName
                         select joint.Value).FirstOrDefault();
         }
-
-        private void print(IEnumerable<IBody> bodies)
-        {
-            foreach (var item in bodies)
-            {
-                Console.WriteLine(item.Joints.Select(joint => joint.Value).Where(joint => joint.JointType.Equals(JointType.WristRight)).First().Position.X);
-            }
-        }
+        
     }
 }
