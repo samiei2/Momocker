@@ -1,0 +1,14 @@
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\obj\Debug\MoMoker.csprojResolveAssemblyReference.cache
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.exe.config
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.exe
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\MoMoker.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\KinectEx.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\Microsoft.Kinect.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\SharpDX.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\KinectEx.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\Microsoft.Kinect.xml
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\bin\Debug\SharpDX.xml
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\obj\Debug\MoMoker.exe
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\obj\Debug\MoMoker.pdb

@@ -101,26 +101,13 @@ namespace KinectV2MouseControl
             screenHeight = (int)SystemParameters.PrimaryScreenHeight;
 
             // set up timer, execute every 0.1s
-<<<<<<< HEAD
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100); 
-　　　　    timer.Tick += new EventHandler(Timer_Tick);
-　　　　    timer.Start();
-=======
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
-
             // open the sensor
             sensor.Open();
         }
 
-
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
         /// <summary>
         /// Pause to click timer
         /// </summary>
@@ -130,20 +117,11 @@ namespace KinectV2MouseControl
         {
             if (!doClick || useGripGesture) return;
 
-<<<<<<< HEAD
-            if (!alreadyTrackedPos) {
-                timeCount = 0;
-                return;
-            }
-            
-=======
             if (!alreadyTrackedPos)
             {
                 timeCount = 0;
                 return;
             }
-
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
             Point curPos = MouseControl.GetCursorPosition();
 
             if ((lastCurPos - curPos).Length < pauseThresold)
@@ -190,11 +168,7 @@ namespace KinectV2MouseControl
                 }
             }
 
-<<<<<<< HEAD
-            if (!dataReceived) 
-=======
             if (!dataReceived)
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
             {
                 alreadyTrackedPos = false;
                 return;
@@ -225,13 +199,8 @@ namespace KinectV2MouseControl
                         // smoothing for using should be 0 - 0.95f. The way we smooth the cusor is: oldPos + (newPos - oldPos) * smoothValue
                         float smoothing = 1 - cursorSmoothing;
                         // set cursor position
-<<<<<<< HEAD
-                        MouseControl.SetCursorPos((int)(curPos.X + (x  * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
-                        
-=======
                         MouseControl.SetCursorPos((int)(curPos.X + (x * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
 
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
                         alreadyTrackedPos = true;
 
                         // Grip gesture
@@ -313,8 +282,4 @@ namespace KinectV2MouseControl
         }
 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 80d873b7f572e0a089803e601e390dbc7b76d2f8
