@@ -1,0 +1,10 @@
+C:\Users\Armin\Desktop\University\3D UI\Project\inputsimulator2\WindowsInput\bin\Debug\WindowsInput.xml
+C:\Users\Armin\Desktop\University\3D UI\Project\inputsimulator2\WindowsInput\bin\Debug\WindowsInput.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\inputsimulator2\WindowsInput\bin\Debug\WindowsInput.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\inputsimulator2\WindowsInput\obj\Debug\WindowsInput.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\inputsimulator2\WindowsInput\obj\Debug\WindowsInput.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\WindowsInput\bin\Debug\WindowsInput.xml
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\WindowsInput\bin\Debug\WindowsInput.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\WindowsInput\bin\Debug\WindowsInput.pdb
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\WindowsInput\obj\Debug\WindowsInput.dll
+C:\Users\Armin\Desktop\University\3D UI\Project\momocker\WindowsInput\obj\Debug\WindowsInput.pdb

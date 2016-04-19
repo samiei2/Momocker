@@ -36,11 +36,12 @@ namespace TransparentController
         public WindowOverlay()
         {
             InitializeComponent();
-            Subscribe(Hook.GlobalEvents());
+            //Subscribe(Hook.GlobalEvents());
             _timer.AutoReset = true;
             _timer.Interval = 1000;
             _timer.Elapsed += TimedScreenShot;
-            _timer.Start();
+            //_timer.Start();
+            new ScreenCapturedForm().Show();
         }
 
         private void TimedScreenShot(object sender, System.Timers.ElapsedEventArgs e)
