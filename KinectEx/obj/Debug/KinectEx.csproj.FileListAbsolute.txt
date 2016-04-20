@@ -8,13 +8,10 @@ D:\Armin\momocker\KinectEx\bin\Debug\Newtonsoft.Json.xml
 D:\Armin\momocker\KinectEx\bin\Debug\SharpDX.xml
 D:\Armin\momocker\KinectEx\obj\Debug\KinectEx.dll
 D:\Armin\momocker\KinectEx\obj\Debug\KinectEx.pdb
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\KinectEx.dll
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\KinectEx.pdb
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\Microsoft.Kinect.dll
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\SharpDX.dll
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\Microsoft.Kinect.xml
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\bin\Debug\SharpDX.xml
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\obj\Debug\KinectEx.dll
-C:\Users\Armin\Desktop\University\3D UI\Project\momocker\KinectEx\obj\Debug\KinectEx.pdb
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\KinectEx.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\KinectEx.pdb
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\Microsoft.Kinect.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\Newtonsoft.Json.dll
+D:\Armin\momocker\momocker\KinectEx\bin\Debug\SharpDX.dll
+D:\Armin\momocker\momocker\KinectEx\obj\Debug\KinectEx.dll
+D:\Armin\momocker\momocker\KinectEx\obj\Debug\KinectEx.pdb

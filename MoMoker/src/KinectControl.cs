@@ -104,10 +104,11 @@ namespace KinectV2MouseControl
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
+
             // open the sensor
             sensor.Open();
         }
-
+        
         /// <summary>
         /// Pause to click timer
         /// </summary>
@@ -116,7 +117,7 @@ namespace KinectV2MouseControl
         void Timer_Tick(object sender, EventArgs e)
         {
             if (!doClick || useGripGesture) return;
-
+            
             if (!alreadyTrackedPos)
             {
                 timeCount = 0;
@@ -167,8 +168,8 @@ namespace KinectV2MouseControl
                     dataReceived = true;
                 }
             }
-
-            if (!dataReceived)
+            
+            if (!dataReceived) 
             {
                 alreadyTrackedPos = false;
                 return;
@@ -199,30 +200,31 @@ namespace KinectV2MouseControl
                         // smoothing for using should be 0 - 0.95f. The way we smooth the cusor is: oldPos + (newPos - oldPos) * smoothValue
                         float smoothing = 1 - cursorSmoothing;
                         // set cursor position
-                        MouseControl.SetCursorPos((int)(curPos.X + (x * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
+
+                        MouseControl.SetCursorPos((int)(curPos.X + (x  * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
 
                         alreadyTrackedPos = true;
 
                         // Grip gesture
-                        if (doClick && useGripGesture)
-                        {
-                            if (body.HandRightState == HandState.Closed)
-                            {
-                                if (!wasRightGrip)
-                                {
-                                    MouseControl.MouseLeftDown();
-                                    wasRightGrip = true;
-                                }
-                            }
-                            else if (body.HandRightState == HandState.Open)
-                            {
-                                if (wasRightGrip)
-                                {
-                                    MouseControl.MouseLeftUp();
-                                    wasRightGrip = false;
-                                }
-                            }
-                        }
+                        //if (doClick && useGripGesture)
+                        //{
+                        //    if (body.HandRightState == HandState.Closed)
+                        //    {
+                        //        if (!wasRightGrip)
+                        //        {
+                        //            MouseControl.MouseLeftDown();
+                        //            wasRightGrip = true;
+                        //        }
+                        //    }
+                        //    else if (body.HandRightState == HandState.Open)
+                        //    {
+                        //        if (wasRightGrip)
+                        //        {
+                        //            MouseControl.MouseLeftUp();
+                        //            wasRightGrip = false;
+                        //        }
+                        //    }
+                        //}
                     }
                     else if (handLeft.Z - spineBase.Z < -0.15f) // if left hand lift forward
                     {

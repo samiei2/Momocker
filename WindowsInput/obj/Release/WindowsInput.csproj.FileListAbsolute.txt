@@ -1,0 +1,6 @@
+D:\Armin\momocker\momocker\WindowsInput\bin\Release\WindowsInput.xml
+D:\Armin\momocker\momocker\WindowsInput\bin\Release\WindowsInput.dll
+D:\Armin\momocker\momocker\WindowsInput\bin\Release\WindowsInput.pdb
+D:\Armin\momocker\momocker\WindowsInput\obj\Release\WindowsInput.csprojResolveAssemblyReference.cache
+D:\Armin\momocker\momocker\WindowsInput\obj\Release\WindowsInput.dll
+D:\Armin\momocker\momocker\WindowsInput\obj\Release\WindowsInput.pdb

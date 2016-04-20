@@ -6,13 +6,35 @@ using System.Threading.Tasks;
 
 namespace MoMoker.src
 {
-    class GestureState
+    public class GestureState
     {
+        internal System.Drawing.Point oldCursorPosition;
         long timeStamp = 0;
 
         public GestureState(long v)
         {
-            this.timeStamp = v;
+            this.TimeStamp = v;
+        }
+
+        public long TimeStamp
+        {
+            get
+            {
+                return timeStamp;
+            }
+
+            set
+            {
+                timeStamp = value;
+            }
+        }
+    }
+
+    public class ScrollGestureState : GestureState
+    {
+        public ScrollGestureState(long v):base(v)
+        {
+            
         }
     }
 }

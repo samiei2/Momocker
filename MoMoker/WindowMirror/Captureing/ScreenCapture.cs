@@ -84,6 +84,8 @@ namespace TransparentController.Captureing
             Win32.RECT rc;
             Win32.GetWindowRect(hwnd, out rc);
 
+            if (rc.Height == 0 || rc.Width == 0)
+                return null;
             Bitmap bmp = new Bitmap(rc.Width, rc.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             Graphics gfxBmp = Graphics.FromImage(bmp);
             IntPtr hdcBitmap = gfxBmp.GetHdc();

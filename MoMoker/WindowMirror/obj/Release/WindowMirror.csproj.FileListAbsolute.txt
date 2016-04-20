@@ -1,0 +1,13 @@
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowMirror.exe.config
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowMirror.exe
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowMirror.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\Gma.System.MouseKeyHook.dll
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowsInput.dll
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowsInput.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Release\WindowsInput.xml
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\WindowMirror.csprojResolveAssemblyReference.cache
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\WindowMirror.Properties.Resources.resources
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\TransparentController.ScreenCapturedForm.resources
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\WindowMirror.csproj.GenerateResource.Cache
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\WindowMirror.exe
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Release\WindowMirror.pdb

@@ -12,3 +12,17 @@ C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\WindowMirror\bi
 C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\WindowMirror\bin\Debug\WindowsInput.xml
 C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\WindowMirror\bin\Debug\Gma.System.MouseKeyHook.dll
 C:\Users\Armin\Desktop\University\3D UI\Project\momocker\MoMoker\WindowMirror\bin\Debug\Gma.System.MouseKeyHook.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowMirror.exe.config
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\WindowMirror.exe
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\WindowMirror.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowMirror.exe
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowMirror.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowsInput.dll
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\Gma.System.MouseKeyHook.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowsInput.pdb
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\bin\Debug\WindowsInput.xml
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\WindowMirror.csprojResolveAssemblyReference.cache
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\WindowMirror.Properties.Resources.resources
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\TransparentController.ScreenCapturedForm.resources
+D:\Armin\momocker\momocker\MoMoker\WindowMirror\obj\Debug\WindowMirror.csproj.GenerateResource.Cache

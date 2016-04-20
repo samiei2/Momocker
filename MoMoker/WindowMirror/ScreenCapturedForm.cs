@@ -70,7 +70,8 @@ namespace TransparentController
             }
             else
             {
-                bitmap = CaptureUtil.CaptureWindowBitBlt(windowHandle);
+                bitmap = CaptureUtil.PrintWindow(windowHandle);
+                //bitmap = CaptureUtil.CaptureWindowBitBlt(windowHandle);
             }
             if (bitmap == null)
                 return;
@@ -82,6 +83,8 @@ namespace TransparentController
                 this.pictureBox1.Width = bitmap.Width;
                 this.Height = bitmap.Height + FormHeightMargin;
                 this.Width = bitmap.Width + FormWidthMargin;
+                if(this.pictureBox1.Image != null)
+                    this.pictureBox1.Image.Dispose();
                 this.pictureBox1.Image = bitmap;
                 this.Invalidate();
             }),bitmap);
