@@ -76,9 +76,10 @@ namespace TransparentController
             Thread _t = new Thread(() => {
                 selectedFiles = GetSelectedFiles();
             });
+            _t.SetApartmentState(ApartmentState.STA);
             _t.Start();
             _t.Join();
-            
+            this.label1.Content = selectedFiles.Count;
         }
 
         private void OnMouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
