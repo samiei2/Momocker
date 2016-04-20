@@ -40,9 +40,15 @@ namespace TransparentController
         {
             m_Events = events;
             m_Events.MouseMove += OnMouseMove;
+            m_Events.MouseUp += OnMouseUp;
         }
 
         private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void OnMouseUp(object sender, MouseEventArgs e)
         {
             
         }

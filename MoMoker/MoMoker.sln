@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoMoker", "MoMoker.csproj", "{02AC08B2-4E9A-4C2D-A6ED-9C07C2FC609A}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInput", "..\WindowsInput\WindowsInput.csproj", "{3549CD6F-80F8-450F-B99E-CF0A736B1F2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBorderWindows", "..\WpfBorderWindows\WpfBorderWindows.csproj", "{4613B83D-787F-4CC6-9382-BEC55BE98169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboard", "..\OnScreenKeyboard\OnScreenKeyboard.csproj", "{2B741D23-34D0-41CB-9CC9-A903A2FD3736}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -191,6 +193,20 @@ Global
 		{4613B83D-787F-4CC6-9382-BEC55BE98169}.Release|x64.Build.0 = Release|Any CPU
 		{4613B83D-787F-4CC6-9382-BEC55BE98169}.Release|x86.ActiveCfg = Release|Any CPU
 		{4613B83D-787F-4CC6-9382-BEC55BE98169}.Release|x86.Build.0 = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B741D23-34D0-41CB-9CC9-A903A2FD3736}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
