@@ -8,7 +8,6 @@ namespace MoMoker.src
 {
     public class GestureState
     {
-        internal System.Drawing.Point oldCursorPosition;
         long timeStamp = 0;
 
         public GestureState(long v)
@@ -30,9 +29,10 @@ namespace MoMoker.src
         }
     }
 
-    public class ScrollGestureState : GestureState
+    public class MouseGestureState : GestureState
     {
-        public ScrollGestureState(long v):base(v)
+        internal System.Drawing.Point oldCursorPosition;
+        public MouseGestureState(long v):base(v)
         {
             
         }

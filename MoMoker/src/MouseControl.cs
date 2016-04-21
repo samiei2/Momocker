@@ -22,6 +22,11 @@ namespace KinectV2MouseControl
             mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
         }
 
+        public static void DoMouseRightClick()
+        {
+            mouse_event(MouseEventFlag.RightDown | MouseEventFlag.RightUp, 0, 0, 0, UIntPtr.Zero);
+        }
+
         public static void Scroll(int times)
         {
             mouse_event(MouseEventFlag.Wheel, 0, 0, (uint)(times * WHEEL_DELTA), UIntPtr.Zero);

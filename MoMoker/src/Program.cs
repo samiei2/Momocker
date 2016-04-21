@@ -14,7 +14,7 @@ namespace MoMoker
         static void Main(string[] args)
         {
             //KinectControl kController = new KinectControl();
-            //KinectGestures kGestures = new KinectGestures();
+            KinectGestures kGestures = new KinectGestures();
             Console.ReadKey();
 
         }
