@@ -92,6 +92,8 @@ namespace MoMoker.src
 
         private void detectGestures(IBody body)
         {
+            // We need to recenter body center to kinect plane center
+            body = RecenterBody(body);
             IJoint rightHand = getJoint(body, JointType.HandRight);
             IJoint leftHand = getJoint(body, JointType.HandLeft);
             IJoint spineBase = getJoint(body, JointType.SpineMid);
@@ -99,6 +101,19 @@ namespace MoMoker.src
             MouseLeftClick(body.HandLeftState, leftHand, spineBase);
             MouseRightClick(body.HandRightState, rightHand, spineBase);
             MouseScroll(body, rightHand, spineBase);
+        }
+
+        private IBody RecenterBody(IBody body)
+        {
+            var spineMid = getJoint(body, JointType.SpineMid);
+            CameraSpacePoint center = new CameraSpacePoint();
+            body.Joints[JointType.SpineMid].Position = center;
+
+            foreach (var joint in body.Joints)
+            {
+                CameraSpacePoint newPoint = new CameraSpacePoint();
+                newPoint.X = 1;
+            }
         }
 
         private void MouseLeftClick(HandState handLeftState, IJoint leftHand, IJoint spineMid)
@@ -152,45 +167,7 @@ namespace MoMoker.src
 
         private void MoveMouse(IBody body, IJoint lefthand, IJoint rightHand, IJoint spineMid)
         {
-            var zRightHandBodyDistance = spineMid.Position.Z - rightHand.Position.Z;
-            var zLeftHandBodyDistance = spineMid.Position.Z - lefthand.Position.Z;
-            //Console.WriteLine(zLeftHandBodyDistance);
-            if (zRightHandBodyDistance > 0.5f && zLeftHandBodyDistance < 0.4f) // Right Hand Moving Cursor
-            {
-                //Point cursorPlanePosition = ConvertToDisplayCoordinates(rightHand.Position.X, rightHand.Position.Y);
-                //this._previousCursorPosition = this._cursorPosition;
-                //this._cursorPosition = cursorPlanePosition;
-                //var haltCursorMove = PointDistance(_cursorPosition, _previousCursorPosition) < 5 ? true : false;
-                //if (!haltCursorMove)
-                //    MouseControl.SetCursorPos(cursorPlanePosition.X, cursorPlanePosition.Y);
-                float x = rightHand.Position.X - spineMid.Position.X;
-                float y = spineMid.Position.Y - rightHand.Position.Y;
-                Point curPos = Cursor.Position;
-                double smoothing = 1 - cursorSmoothing;
-
-                //if (!haltCursorMove)
-                //MouseControl.SetCursorPos(cursorPlanePosition.X, cursorPlanePosition.Y);
-                MouseControl.SetCursorPos((int)(curPos.X + (x * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
-            }
-            else if (zRightHandBodyDistance < 0.4f && zLeftHandBodyDistance > 0.5f) // Left Hand Moving cursor
-            {
-                //Point cursorPlanePosition = ConvertToDisplayCoordinates(lefthand.Position.X, lefthand.Position.Y);
-                //this._previousCursorPosition = this._cursorPosition;
-                //this._cursorPosition = cursorPlanePosition;
-                //var haltCursorMove = PointDistance(_cursorPosition, _previousCursorPosition) < 5 ? true : false;
-                float x = lefthand.Position.X - spineMid.Position.X;
-                float y = spineMid.Position.Y - lefthand.Position.Y;
-                Point curPos = Cursor.Position;
-                double smoothing = 1 - cursorSmoothing;
-
-                //if (!haltCursorMove)
-                    //MouseControl.SetCursorPos(cursorPlanePosition.X, cursorPlanePosition.Y);
-                MouseControl.SetCursorPos((int)(curPos.X + (x * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
-            }
-            else
-            {
-                // Do Nothing Maybe Lock Cursor Position
-            }
+            //Map body Spine Mid - Shoulder Left/Right to center Screen
         }
 
         private double PointDistance(Point p1, Point p2)
