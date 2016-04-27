@@ -8,18 +8,46 @@ using HighSign.Common.Plugins;
 using System.Drawing;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace HighSign
 {
 	static class Program
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>  
-		[STAThread]
+
+        #region Temp/To be Removed
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool SetWindowPos(
+        IntPtr hWnd,
+        IntPtr hWndInsertAfter,
+        int x,
+        int y,
+        int cx,
+        int cy,
+        int uFlags);
+
+        private const int HWND_TOPMOST = -1;
+        private const int SWP_NOMOVE = 0x0002;
+        private const int SWP_NOSIZE = 0x0001;
+        #endregion
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>  
+        [STAThread]
 		static void Main()
 		{
-			bool createdNew = true;
+            #region TO be Removed
+            IntPtr hWnd = Process.GetCurrentProcess().MainWindowHandle;
+
+            SetWindowPos(hWnd,
+                new IntPtr(HWND_TOPMOST),
+                0, 0, 0, 0,
+                SWP_NOMOVE | SWP_NOSIZE);
+            #endregion
+
+            bool createdNew = true;
 			using (Mutex mutex = new Mutex(true, "HighSign", out createdNew))
 			{
 				if (createdNew)
@@ -36,8 +64,8 @@ namespace HighSign
 					UI.TrayManager.Instance.Load();
 					Input.MouseCapture.Instance.EnableMouseCapture();
 
-					UI.Forms.ActionConfiguration dialog = new HighSign.UI.Forms.ActionConfiguration();
-					dialog.Show();
+					//UI.Forms.ActionConfiguration dialog = new HighSign.UI.Forms.ActionConfiguration();
+					//dialog.Show();
 					
 					try
 					{

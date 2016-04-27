@@ -62,7 +62,7 @@ namespace KinectV2MouseControl
         public const float PAUSE_THRESOLD = 60f;
         public const bool DO_CLICK = true;
         public const bool USE_GRIP_GESTURE = true;
-        public const float CURSOR_SMOOTHING = 0.2f;
+        public const float CURSOR_SMOOTHING = 0.8f;
 
         /// <summary>
         /// Determine if we have tracked the hand and used it to move the cursor,

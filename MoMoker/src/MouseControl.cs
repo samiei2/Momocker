@@ -22,6 +22,20 @@ namespace KinectV2MouseControl
             mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
         }
 
+        public static void DoDoubleMouseClick()
+        {
+            mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp | MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
+        }
+
+        public static void MouseRightDown()
+        {
+            mouse_event(MouseEventFlag.RightDown, 0, 0, 0, UIntPtr.Zero);
+        }
+        public static void MouseRightUp()
+        {
+            mouse_event(MouseEventFlag.RightUp, 0, 0, 0, UIntPtr.Zero);
+        }
+
         public static void DoMouseRightClick()
         {
             mouse_event(MouseEventFlag.RightDown | MouseEventFlag.RightUp, 0, 0, 0, UIntPtr.Zero);
@@ -35,6 +49,11 @@ namespace KinectV2MouseControl
         public static void ScrollClick()
         {
             mouse_event(MouseEventFlag.MiddleDown | MouseEventFlag.MiddleUp, 0, 0, 0, UIntPtr.Zero);
+        }
+
+        public static void MoveTo(int x,int y)
+        {
+            mouse_event(MouseEventFlag.Absolute | MouseEventFlag.Move, x, y, 0, UIntPtr.Zero);
         }
 
         [DllImport("user32.dll")]
