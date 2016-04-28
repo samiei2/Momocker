@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace KinectV2MouseControl
 {
@@ -24,7 +25,9 @@ namespace KinectV2MouseControl
 
         public static void DoDoubleMouseClick()
         {
-            mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp | MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
+            mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp , 0, 0, 0, UIntPtr.Zero);
+            Thread.Sleep(100);
+            mouse_event(MouseEventFlag.LeftDown | MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
         }
 
         public static void MouseRightDown()

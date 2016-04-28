@@ -41,10 +41,12 @@ namespace MoMoker.src
         private bool mouseInScroll = false;
         private MouseGestureState startRightHandClickGestureState;
         private MouseGestureState startLeftHandClickGestureState;
-        private double mouseSensitivity = 3.0f;
+        private static readonly double MOUSESENSITIVITY = 2.5f;
+        private double mouseSensitivity = MOUSESENSITIVITY;
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-        private double cursorSmoothing = 0.8f;
+        private static readonly double CURSORSMOOTHING = 0.9f;
+        private double cursorSmoothing = CURSORSMOOTHING;
         private JointType REFERENCEJOINT = JointType.SpineMid;
         private System.Timers.Timer timer = new System.Timers.Timer();
         private bool doClick = true;
@@ -57,7 +59,11 @@ namespace MoMoker.src
         private double pauseThresold = 60f;
         private float timeRequired = 2f;
         private bool RightDown;
-        private MouseGestureState doubleClickGestureState;
+        private MouseGestureState dragMouseGestureState;
+        private MouseGestureState clickMouseGestureState;
+        private MouseGestureState doubleClickMouseGestureState;
+        private bool mouseInDrag;
+        private MouseGestureState clickRightMouseGestureState;
 
         public KinectGestures()
         {
@@ -195,8 +201,10 @@ namespace MoMoker.src
             //Map body Spine Mid - Shoulder Left/Right to center Screen
             var zRightHandBodyDistance = spineMid.Position.Z - rightHand.Position.Z;
             var zLeftHandBodyDistance = spineMid.Position.Z - lefthand.Position.Z;
+
+            //Console.WriteLine("(" + zLeftHandBodyDistance + "," + zRightHandBodyDistance + ")");
             //Console.WriteLine(zLeftHandBodyDistance);
-            if (zRightHandBodyDistance > 0.5f && zLeftHandBodyDistance < 0.4f) // Right Hand Moving Cursor
+            if (zRightHandBodyDistance > 0.45f && zLeftHandBodyDistance < 0.3f) // Right Hand Moving Cursor
             {
                 RightHandActions(body, rightHand, spineMid);
             }
@@ -207,6 +215,7 @@ namespace MoMoker.src
             else
             {
                 // Do Nothing Maybe Lock Cursor Position
+                cursorSmoothing = CURSORSMOOTHING;
                 wasLeftGrip = false;
                 wasRightGrip = false;
                 alreadyTrackedPos = false;
@@ -219,57 +228,101 @@ namespace MoMoker.src
             //this._previousCursorPosition = this._cursorPosition;
             //this._cursorPosition = cursorPlanePosition;
             //var haltCursorMove = PointDistance(_cursorPosition, _previousCursorPosition) < 5 ? true : false;
-            float x = lefthand.Position.X - spineMid.Position.X;
-            float y = spineMid.Position.Y - lefthand.Position.Y;
+            float x = lefthand.Position.X - spineMid.Position.X + 0.3f;
+            float y = spineMid.Position.Y - lefthand.Position.Y + 0.3f;
             Point curPos = Cursor.Position;
             double smoothing = 1 - cursorSmoothing;
 
             //if (!haltCursorMove)
-            //MouseControl.SetCursorPos(cursorPlanePosition.X, cursorPlanePosition.Y);
+            //MouseControl.SetCursorPos(curPos.X, curPos.Y);
             MouseControl.SetCursorPos((int)(curPos.X + (x * mouseSensitivity * screenWidth - curPos.X) * smoothing), (int)(curPos.Y + ((y + 0.25f) * mouseSensitivity * screenHeight - curPos.Y) * smoothing));
             alreadyTrackedPos = true;
             if (doClick && useGripGesture)
             {
                 #region Drag With Left and Single Click
-                if (body.HandLeftState == HandState.Closed)
+                if(body.HandLeftState == HandState.Closed)
                 {
-                    if (!wasLeftGrip)
+                    if (!mouseInDrag)
+                        cursorSmoothing = 0.9999;
+                    if (dragMouseGestureState == null)
                     {
-                        MouseControl.MouseLeftDown();
-                        wasLeftGrip = true;
-                    }
-                }
-                else if (body.HandLeftState == HandState.Open)
-                {
-                    if (wasLeftGrip)
-                    {
-                        MouseControl.MouseLeftUp();
-                        wasLeftGrip = false;
-                    }
-                }
-                #endregion
-
-                #region DoubleClick
-                if (doubleClickGestureState == null)
-                {
-                    doubleClickGestureState = new MouseGestureState(PHelper.CurrentTimeMillis());
-                    doubleClickGestureState.oldCursorPosition = Cursor.Position;
-                }
-                else // Excludes the first time this action is run
-                {
-                    if (PointDistance(doubleClickGestureState.oldCursorPosition, Cursor.Position) < 8f) //almost in the same area
-                    {
-                        var currentTime = PHelper.CurrentTimeMillis();
-                        Console.WriteLine(currentTime - doubleClickGestureState.TimeStamp);
-                        if (currentTime - doubleClickGestureState.TimeStamp > 900)
-                        {
-                            MouseControl.DoDoubleMouseClick();
-                            doubleClickGestureState = null;
-                        }
+                        dragMouseGestureState = new MouseGestureState(PHelper.CurrentTimeMillis());
+                        dragMouseGestureState.oldCursorPosition = Cursor.Position;
+                        dragMouseGestureState.oldHandPosition = new SpacePoint(x, y, 0);
                     }
                     else
-                        doubleClickGestureState = null;
+                    {
+                        SpacePoint handCurrentPosition = new SpacePoint(x, y, 0);
+                        var distanceDiff = PointDistance(dragMouseGestureState.oldHandPosition,handCurrentPosition);
+                        if(distanceDiff > 0.09 && !mouseInDrag)
+                        {
+                            cursorSmoothing = CURSORSMOOTHING;
+                            MouseControl.MouseLeftDown();
+                            mouseInDrag = true;
+                        }
+                    }
+
+                    if (clickMouseGestureState == null)
+                    {
+                        clickMouseGestureState = new MouseGestureState(PHelper.CurrentTimeMillis());
+                        clickMouseGestureState.oldCursorPosition = Cursor.Position;
+                        clickMouseGestureState.oldHandPosition = new SpacePoint(x, y, 0);
+                    }
+                    if (doubleClickMouseGestureState == null)
+                    {
+                        doubleClickMouseGestureState = new MouseGestureState(PHelper.CurrentTimeMillis());
+                        doubleClickMouseGestureState.oldCursorPosition = Cursor.Position;
+                        doubleClickMouseGestureState.oldHandPosition = new SpacePoint(x, y, 0);
+                    }
+                    //else
+                    //{
+                    //    var distanceDiff = PointDistance(doubleClickMouseGestureState.oldCursorPosition, Cursor.Position);
+                    //    if (distanceDiff < 4)
+                    //    {
+
+                    //    }
+                    //}
                 }
+                else if(body.HandLeftState == HandState.Open)
+                {
+                    cursorSmoothing = CURSORSMOOTHING;
+                    if (mouseInDrag)
+                    {
+                        MouseControl.MouseLeftUp();
+                        mouseInDrag = false;
+                        dragMouseGestureState = null;
+                    }
+                    else {
+                        if (clickMouseGestureState != null)
+                        {
+                            SpacePoint handCurrentPosition = new SpacePoint(x, y, 0);
+                            var distanceDiff = PointDistance(clickMouseGestureState.oldHandPosition, handCurrentPosition);
+                            //var timeDiff = PHelper.CurrentTimeMillis() - 
+                            if (distanceDiff < 0.05)
+                            {
+                                MouseControl.DoMouseClick();
+                                Console.WriteLine("Mouse Double Click");
+                            }
+                            clickMouseGestureState = null;
+                        }
+                    }
+                }
+                //if (body.HandLeftState == HandState.Closed)
+                //{
+                //    if (!wasLeftGrip)
+                //    {
+                //        MouseControl.MouseLeftDown();
+                //        wasLeftGrip = true;
+                //    }
+                //}
+                //else if (body.HandLeftState == HandState.Open)
+                //{
+                //    if (wasLeftGrip)
+                //    {
+                //        MouseControl.MouseLeftUp();
+                //        wasLeftGrip = false;
+                //    }
+                //}
                 #endregion
             }
         }
@@ -282,8 +335,8 @@ namespace MoMoker.src
             //var haltCursorMove = PointDistance(_cursorPosition, _previousCursorPosition) < 5 ? true : false;
             //if (!haltCursorMove)
             //    MouseControl.SetCursorPos(cursorPlanePosition.X, cursorPlanePosition.Y);
-            float x = rightHand.Position.X - spineMid.Position.X;
-            float y = spineMid.Position.Y - rightHand.Position.Y;
+            float x = rightHand.Position.X - spineMid.Position.X + 0.1f;
+            float y = spineMid.Position.Y - rightHand.Position.Y + 0.18f;
             Point curPos = Cursor.Position;
             double smoothing = 1 - cursorSmoothing;
 
@@ -295,6 +348,25 @@ namespace MoMoker.src
             alreadyTrackedPos = true;
             if (doClick && useGripGesture)
             {
+                //if (body.HandRightState == HandState.Closed)
+                //{
+                //    cursorSmoothing = 0.9999;
+                //    if (clickRightMouseGestureState == null)
+                //    {
+                //        clickRightMouseGestureState = new MouseGestureState(PHelper.CurrentTimeMillis());
+                //        clickRightMouseGestureState.oldCursorPosition = Cursor.Position;
+                //        clickRightMouseGestureState.oldHandPosition = new SpacePoint(x, y, 0);
+                //    }
+                //}
+                //else if (body.HandRightState == HandState.Open)
+                //{
+                //    cursorSmoothing = CURSORSMOOTHING;
+                //    if (clickRightMouseGestureState != null)
+                //    {
+                //        MouseControl.DoMouseRightClick();
+                //        clickRightMouseGestureState = null;
+                //    }
+                //}
                 if (body.HandRightState == HandState.Closed)
                 {
                     if (!wasRightGrip)
@@ -380,6 +452,12 @@ namespace MoMoker.src
         private double PointDistance(Point p1, Point p2)
         {
             double distance = Math.Round(Math.Sqrt(Math.Pow((p2.X - p1.X), 2) + Math.Pow((p2.Y - p1.Y), 2)), 1);
+            return distance;
+        }
+
+        private double PointDistance(SpacePoint p1, SpacePoint p2)
+        {
+            double distance = Math.Round(Math.Sqrt(Math.Pow((p2.X - p1.X), 2) + Math.Pow((p2.Y - p1.Y), 2)), 5);
             return distance;
         }
 

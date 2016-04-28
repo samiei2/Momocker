@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,8 @@ namespace MoMoker.src
     public class MouseGestureState : GestureState
     {
         internal System.Drawing.Point oldCursorPosition;
+        internal SpacePoint oldHandPosition;
+
         public MouseGestureState(long v):base(v)
         {
             
