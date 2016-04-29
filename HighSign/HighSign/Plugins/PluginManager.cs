@@ -157,7 +157,9 @@ namespace HighSign.Plugins
 						}
 					}
 			}
-			catch {  }
+			catch (Exception e) {
+                string message = e.Message;
+            }
 
 			return retPlugins;
 		}
