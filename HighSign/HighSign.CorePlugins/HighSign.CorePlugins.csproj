@@ -81,8 +81,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SelectAll.cs" />
+    <Compile Include="CloseTab.cs" />
+    <Compile Include="CopyAnything.cs" />
     <Compile Include="DisableGestures.cs" />
     <Compile Include="MouseControl.cs" />
+    <Compile Include="CutAnything.cs" />
+    <Compile Include="PasteAnything.cs" />
+    <Compile Include="CloseWindow.cs" />
+    <Compile Include="ZoomOut.cs" />
+    <Compile Include="ZoomIn.cs" />
     <Compile Include="ScrollMode.cs" />
     <Compile Include="ScrollUp.cs" />
     <Compile Include="ScrollDown.cs" />

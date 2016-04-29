@@ -169,7 +169,7 @@ namespace HighSign.Input
                 
 				// Try to begin capture process, if capture started then don't notify other applications of a mouse event, otherwise do
 				e.Handled = TryBeginCapture(e.Location);
-                Console.WriteLine("Mouse Down : Capture Started? : " + e.Handled);
+
 
                 if (!e.Handled)
 					Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.Normal;
@@ -182,10 +182,7 @@ namespace HighSign.Input
             if (State == CaptureState.Capturing || State == CaptureState.CapturingInvalid)
             {
                 AddPoint(e.Location);
-                Console.WriteLine("MouseMove : Point Added");
             }
-            else
-                Console.WriteLine("MouseMove: " + State);
         }
 
 		protected void MouseEventTranslator_MouseUp(object sender, MouseMessageEventArgs e)
@@ -196,7 +193,6 @@ namespace HighSign.Input
 
             // Replay original event if capturing was invalid, otherwise
             // successfully end the capture process and handle this MouseUp event
-            Console.WriteLine("Mouseup " + State);
             switch (State)
 			{
 				case CaptureState.CapturingInvalid:
@@ -227,7 +223,6 @@ namespace HighSign.Input
 			// if the user chooses to release the mouse button during the CapturingInvalid state, then we'll
 			// simulate the original mouse event
 			State = CaptureState.CapturingInvalid;
-            Console.WriteLine(State.ToString());
 			// Clear old gesture from point list so we can start adding the new captures points to the list
 			_PointsCaptured.Clear();
 

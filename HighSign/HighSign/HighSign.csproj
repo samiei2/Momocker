@@ -13,7 +13,8 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <StartupObject>HighSign.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
     <ApplicationIcon>Resources\Mouse.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
