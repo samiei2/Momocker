@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="OnScreenKeyboard.Keyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:extensions="clr-namespace:OnScreenKeyboard"
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:OnScreenKeyboard" Height="185.774" Width="344.787">
+    <Grid Background="DarkKhaki">
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="Q" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="W" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="76,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="E" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="109,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="R" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="142,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="T" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="Y" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="U" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="241,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="I" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="274,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="O" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="P" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="A" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="60,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="S" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="93,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="D" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="126,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="F" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="159,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="G" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="192,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="H" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="225,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="J" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="258,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="K" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="291,53,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="L" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="60,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="Z" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="93,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="X" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="126,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="C" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="159,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="V" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="192,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="B" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="225,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="N" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="258,96,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="M" extensions:KeyboardButton.ControlButtonSource="false" IsEnabled="False"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="93,139,0,0" VerticalAlignment="Top" Width="160" Height="38" ButtonText=""  extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="258,139,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="." extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="60,139,0,0" VerticalAlignment="Top" Width="28" Height="38" ButtonText="," extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="45" Height="38" ButtonText="SHIFT" extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="291,96,0,0" VerticalAlignment="Top" Width="45" Height="38" ButtonText="Back" extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="45" Height="38" ButtonText="Sym" extensions:KeyboardButton.ControlButtonSource="true"/>
+        <local:KeyboardButton HorizontalAlignment="Left" Margin="291,139,0,0" VerticalAlignment="Top" Width="45" Height="38" ButtonText="Next" extensions:KeyboardButton.ControlButtonSource="true"/>
+    </Grid>
+</UserControl>
