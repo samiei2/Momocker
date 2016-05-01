@@ -11,7 +11,7 @@ using System.Windows.Interop;
 using Gma.System.MouseKeyHook;
 using MinimizeCapture;
 using TransparentController.Captureing;
-using WindowsInput;
+using WindowsInputSimulator;
 
 namespace TransparentController
 {

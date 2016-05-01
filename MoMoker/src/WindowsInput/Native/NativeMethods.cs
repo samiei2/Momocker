@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace WindowsInput.Native
+namespace WindowsInputSimulator.Native
 {
     /// <summary>
     /// References all of the Native Windows API methods for the WindowsInput functionality.

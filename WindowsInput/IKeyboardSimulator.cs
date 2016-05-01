@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using WindowsInput.Native;
+using WindowsInputSimulator.Native;
 
-namespace WindowsInput
+namespace WindowsInputSimulator
 {
     /// <summary>
     /// The service contract for a keyboard simulator for the Windows platform.

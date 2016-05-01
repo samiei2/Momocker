@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsInput
+namespace WindowsInputSimulator
 {
     /// <summary>
     /// The service contract for a mouse simulator for the Windows platform.

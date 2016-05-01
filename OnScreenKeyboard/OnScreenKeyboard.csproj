@@ -35,10 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="rm.Trie">
-      <HintPath>..\dll\rm.Trie.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -49,6 +47,7 @@
       <HintPath>..\dll\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +56,12 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -67,6 +72,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="RadialKeyboard.xaml.cs">
+      <DependentUpon>RadialKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Keyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KeyboardButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,13 +91,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Keyboard.xaml.cs">
+      <DependentUpon>Keyboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeyboardButton.xaml.cs">
       <DependentUpon>KeyboardButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KeyPressEventArgs.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RadialKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -121,6 +141,10 @@
     <ProjectReference Include="..\globalmousekeyhook-vNext\MouseKeyHook\MouseKeyHook.csproj">
       <Project>{f52aa97e-180a-40ed-8f2b-09080171d6c7}</Project>
       <Name>MouseKeyHook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsInput\WindowsInput.csproj">
+      <Project>{3549cd6f-80f8-450f-b99e-cf0a736b1f2a}</Project>
+      <Name>WindowsInput</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

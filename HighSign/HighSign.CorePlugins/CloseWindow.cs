@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using HighSign.Common.Plugins;
 using ManagedWinapi.Windows;
-using WindowsInput;
+using WindowsInputSimulator;
 using KinectV2MouseControl;
 
 namespace HighSign.CorePlugins
@@ -68,7 +68,7 @@ namespace HighSign.CorePlugins
 
             // Minimize window
             var windowHandle = ActionPoint.WindowHandle;
-            inputSim.Keyboard.ModifiedKeyStroke(WindowsInput.Native.VirtualKeyCode.LMENU, WindowsInput.Native.VirtualKeyCode.F4);
+            inputSim.Keyboard.ModifiedKeyStroke(WindowsInputSimulator.Native.VirtualKeyCode.LMENU, WindowsInputSimulator.Native.VirtualKeyCode.F4);
 			//ActionPoint.Window.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 
 			return true;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsInput
+namespace WindowsInputSimulator
 {
     /// <summary>
     /// Implements the <see cref="IInputSimulator"/> interface to simulate Keyboard and Mouse input and provide the state of those input devices.

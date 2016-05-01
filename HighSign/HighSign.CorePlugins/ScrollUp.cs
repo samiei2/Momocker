@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using HighSign.Common.Plugins;
 using ManagedWinapi.Windows;
-using WindowsInput;
+using WindowsInputSimulator;
 
 namespace HighSign.CorePlugins
 {

@@ -1,4 +1,4 @@
-﻿namespace WindowsInput
+﻿namespace WindowsInputSimulator
 {
     /// <summary>
     /// The mouse button

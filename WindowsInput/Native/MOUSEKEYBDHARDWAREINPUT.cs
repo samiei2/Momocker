@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace WindowsInput.Native
+namespace WindowsInputSimulator.Native
 {
 #pragma warning disable 649
     /// <summary>

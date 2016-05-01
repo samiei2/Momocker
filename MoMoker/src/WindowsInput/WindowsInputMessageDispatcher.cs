@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using WindowsInput.Native;
+using WindowsInputSimulator.Native;
 
-namespace WindowsInput
+namespace WindowsInputSimulator
 {
     /// <summary>
     /// Implements the <see cref="IInputMessageDispatcher"/> by calling <see cref="NativeMethods.SendInput"/>.

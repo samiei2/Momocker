@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using WindowsInput.Native;
+using WindowsInputSimulator.Native;
 
-namespace WindowsInput
+namespace WindowsInputSimulator
 {
     /// <summary>
     /// Implements the <see cref="IKeyboardSimulator"/> interface by calling the an <see cref="IInputMessageDispatcher"/> to simulate Keyboard gestures.

@@ -1,10 +1,15 @@
-﻿namespace WindowsInput.Native
+﻿namespace WindowsInputSimulator.Native
 {
     /// <summary>
     /// The list of VirtualKeyCodes (see: http://msdn.microsoft.com/en-us/library/ms645540(VS.85).aspx)
     /// </summary>
     public enum VirtualKeyCode //: UInt16
     {
+        /// <summary>
+        /// NO BUTTON
+        /// </summary>
+        EMPTY = 0x00,
+
         /// <summary>
         /// Left mouse button
         /// </summary>

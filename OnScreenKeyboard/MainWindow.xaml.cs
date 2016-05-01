@@ -28,16 +28,31 @@ namespace OnScreenKeyboard
         private SQLiteConnection m_dbConnection;
         private HashSet<string> trie;
         private bool _loadCompleted;
+        private string currentWord = "";
 
         public MainWindow()
         {
             InitializeComponent();
-            this.Width = Screen.PrimaryScreen.WorkingArea.Width;
-            this.Height = 100;
-            this.Top = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
-            this.Left = 0;
+            //this.Width = Screen.PrimaryScreen.WorkingArea.Width;
+            //this.Height = 100;
+            //this.Top = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
+            //this.Left = 0;
             trie = new HashSet<string>();
             LoadDatabase();
+            myKeyboard.KeyboardKeyPress += KeyPressed;
+        }
+
+        private void KeyPressed(object sender, EventArgs e)
+        {
+            var buttonEvent = (KeyPressEventArgs)e;
+            if(!buttonEvent.ControlButton)
+                currentWord += buttonEvent.ButtonText;
+            Thread _populateThread = new Thread(() =>
+            {
+                PopulateKeyboard(currentWord);
+            });
+            _populateThread.Start();
+            _populateThread.Join();
         }
 
         private void LoadDatabase()
@@ -54,25 +69,24 @@ namespace OnScreenKeyboard
                     trie.Add(reader["name"].ToString());
                 }
                 _loadCompleted = true;
-                PopulateKeyboard();
+                PopulateKeyboard("");
             });
             _dataLoadThread.Start();
-            //_dataLoadThread.Join();
+            _dataLoadThread.Join();
         }
 
-        private void PopulateKeyboard()
+        private void PopulateKeyboard(string prefix)
         {
             HashSet<string> wordsSet = new HashSet<string>(trie);
-            List<char> keys = GetKeySet(wordsSet);
+            List<char> keys = GetKeySet(wordsSet,prefix);
+            
+
             try
             {
-                stackpanel.Dispatcher.BeginInvoke((MethodInvoker)(() => {
-                    foreach (char key in keys)
-                    {
-                        KeyboardButton button = new KeyboardButton();
-                        button.label.Content = key;
-                        this.stackpanel.Children.Add(button);
-                    }
+                Dispatcher.BeginInvoke((MethodInvoker)(() =>
+                {
+                    myKeyboard.DisableAllKeys();
+                    myKeyboard.EnableKeys(keys);
                 }));
             }
             catch (Exception e)
@@ -94,11 +108,25 @@ namespace OnScreenKeyboard
             return keys;
         }
 
-        private List<string> GetKeySet(HashSet<string> wordsSet,string prefix)
+        private List<char> GetKeySet(HashSet<string> wordsSet,string prefix)
         {
-            List<string> keys = new List<string>();
-            string firstWord = wordsSet.First();
-            return keys;
+            if (prefix != "")
+            {
+                prefix = prefix.ToLower();
+                wordsSet = new HashSet<string>(
+                    wordsSet.Where((string word) => { return word.StartsWith(prefix); }).Select((string word) => { return word.Remove(0, prefix.Length); }).Where((string word) => { return word != ""; }));
+                return GetKeySet(wordsSet);
+            }
+            else
+            {
+                return GetKeySet(wordsSet);
+            }
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }
