@@ -1,0 +1,25 @@
+Mouse Mocker:
+
+This is a university project focusing on creating a program that can do the mouse movement and keyboard typing using Microsoft Kinect V2 SDK.
+I have used an existing code for the purpose of controling mouse movement and actions using kinect. The existing code was smooth enought to
+move the mouse but some tweaks were added to make the movement for small selections and manipulations even smoother. I have used a combination
+of Kalman smoothing and a timed window average of input data for the jitter and noise reduction. To remove hand pose noise that is used for 
+clicking I again used a timed window average that made the clicking very reliable.
+
+Features already available:
+1.Mouse Movement using either hand
+2.Clicks : Left clicks are with the left hand and right clicks are with the right
+3.Gesture Recognition added using High Sign project (You should check it out,its really cool and you can define so many unique gestures)
+
+Future features that may be added:
+1. Adding typing using mouse movement on an On-Screen Keyboard
+  Comment: This is an active area of research so I don't suppose I'll be implementing like that soon but if anyone wants to continue my work
+  you should look into papers that investigated and used eye movement for typing.
+
+2. Moving of windows between different screens hosting different operating systems
+  Comment: This can also be challenging since you need to not only solve logical choices like if a window moves to a guest OS does it use
+  its file system or still only uses its own host OS file system, and also the problem of capturing windows and serializing the whole process
+  or screen capture to the other machine. (Very challenging problem specially in Windows API)
+  
+I have used so many codes from here and there but all of them had either BSD or MIT licenses so you can use my code with the same implied 
+licensing as well.
